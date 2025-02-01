@@ -16,7 +16,11 @@ public class Education {
     private String school;
     private String degree;
     private String fieldOfStudy;
+
+    @Column(name = "from_date")
     private LocalDate from;
+
+    @Column(name = "to_date")
     private LocalDate to;
     private boolean current;
 

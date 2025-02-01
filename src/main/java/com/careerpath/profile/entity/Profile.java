@@ -5,9 +5,11 @@ import com.careerpath.education.entity.Education;
 import com.careerpath.user.entity.User;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Profiles")
 public class Profile {
 
     @Id
@@ -18,7 +20,9 @@ public class Profile {
     private String website;
     private String company;
     private String location;
-    private String skills;
+
+    @ElementCollection
+    private List<String> skills = new ArrayList<>();
     private String githubusername;
     private String bio;
     private String twitter;

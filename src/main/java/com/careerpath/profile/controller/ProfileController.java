@@ -30,8 +30,4 @@ public class ProfileController {
         return ResponseEntity.ok(profileService.getProfileByUserId(userId));
     }
 
-    @PostMapping
-    public ResponseEntity<?> saveProfile() {
-
-    }
 }

@@ -16,8 +16,12 @@ public class Experience {
     private String title;
     private String company;
     private String position;
+
+    @Column(name = "from_date")
     private LocalDate from;
+    @Column(name = "to_date")
     private LocalDate to;
+
     private Boolean current;
     private String description;
 
