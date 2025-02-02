@@ -1,11 +1,15 @@
-package com.careerpath.education.entity;
+package com.careerpath.profile.entity;
 
 
-import com.careerpath.profile.entity.Profile;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Getter
 @Entity
 public class Education {
 
@@ -22,7 +26,7 @@ public class Education {
 
     @Column(name = "to_date")
     private LocalDate to;
-    private boolean current;
+    private Boolean current;
 
     @ManyToOne
     @JoinColumn(name = "profile_id")

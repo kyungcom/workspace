@@ -1,14 +1,17 @@
 package com.careerpath.profile.entity;
 
-import com.careerpath.experience.entity.Experience;
-import com.careerpath.education.entity.Education;
 import com.careerpath.user.entity.User;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Entity
+@Getter
 @Table(name = "Profiles")
 public class Profile {
 

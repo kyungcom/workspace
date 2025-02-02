@@ -1,11 +1,15 @@
-package com.careerpath.experience.entity;
+package com.careerpath.profile.entity;
 
 
-import com.careerpath.profile.entity.Profile;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Getter
 @Entity
 public class Experience {
 

@@ -7,6 +7,7 @@ import com.careerpath.post.entity.Post;
 import com.careerpath.profile.entity.Profile;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "users")
+@ToString(of = {"userId", "email", "password", "name"}) // id와 age toString
 public class User {
 
     @Id
