@@ -1,8 +1,8 @@
 package com.careerpath.user.sevice;
 
 
-import com.careerpath.auth.dto.LoginDTO;
-import com.careerpath.auth.dto.RegisterDTO;
+import com.careerpath.auth.dto.LoginDto;
+import com.careerpath.auth.dto.RegisterDto;
 import com.careerpath.auth.dto.UserInfoDto;
 import com.careerpath.auth.jwt.JwtUtil;
 import com.careerpath.user.entity.User;
@@ -11,8 +11,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -31,7 +29,7 @@ public class UserService {
 
     // 회원가입 메서드
     @Transactional
-    public User registerUser(RegisterDTO registerDTO) {
+    public User registerUser(RegisterDto registerDTO) {
         // 중복 체크
         if (userRepository.findByEmail(registerDTO.getEmail()).isPresent()) {
             throw new IllegalArgumentException("이미 사용 중인 이메일입니다.");
@@ -47,7 +45,7 @@ public class UserService {
     }
 
     // 로그인 검증 메서드
-    public String authenticateUser(LoginDTO request) {
+    public String authenticateUser(LoginDto request) {
         // 1. email 기반 계정 탐색
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid credentials"));

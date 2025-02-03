@@ -1,11 +1,11 @@
 package com.careerpath.auth.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-public class RegisterDTO {
+@AllArgsConstructor
+public class LoginDto {
     private String email;
     private String password;
-    private String name;
 }
